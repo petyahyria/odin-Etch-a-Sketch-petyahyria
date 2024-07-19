@@ -18,6 +18,7 @@ const addRowOfSquares = (numberOfSquares) => {
                                 width: ${squareSize}px;
                                 height: ${squareSize}px;
                                 flex-shrink: 1;
+                                opacity: 0.1;
                                 `
         square.addEventListener("mouseenter", (e) =>{
             //rgb receive numbers as arguments from 0 to 255
@@ -25,9 +26,15 @@ const addRowOfSquares = (numberOfSquares) => {
             let randomNumber2 = Math.floor(Math.random() * 255);
             let randomNumber3 = Math.floor(Math.random() * 255);
             e.target.style.backgroundColor = `rgb(${randomNumber1}, ${randomNumber2}, ${randomNumber3})`;
+            e.target.style.opacity = `1`;
         });
+        let squareOpacity = 0.1;
         square.addEventListener("mouseleave", (e)=>{
             e.target.style.backgroundColor = "#25283D";
+            if(squareOpacity<1){
+                squareOpacity += 0.1;
+            }
+            e.target.style.opacity = `${squareOpacity}`;
         })
         row.appendChild(square);
     }
