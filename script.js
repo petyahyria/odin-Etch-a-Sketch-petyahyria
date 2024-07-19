@@ -19,6 +19,12 @@ const addRowOfSquares = (numberOfSquares) => {
                                 height: ${squareSize}px;
                                 flex-shrink: 1;
                                 `
+        square.addEventListener("mouseenter", (e) =>{
+            e.target.style.backgroundColor = "#7B1E7A";
+        });
+        square.addEventListener("mouseleave", (e)=>{
+            e.target.style.backgroundColor = "#25283D";
+        })
         row.appendChild(square);
     }
 }
