@@ -20,7 +20,11 @@ const addRowOfSquares = (numberOfSquares) => {
                                 flex-shrink: 1;
                                 `
         square.addEventListener("mouseenter", (e) =>{
-            e.target.style.backgroundColor = "#7B1E7A";
+            //rgb receive numbers as arguments from 0 to 255
+            let randomNumber1 = Math.floor(Math.random() * 255);
+            let randomNumber2 = Math.floor(Math.random() * 255);
+            let randomNumber3 = Math.floor(Math.random() * 255);
+            e.target.style.backgroundColor = `rgb(${randomNumber1}, ${randomNumber2}, ${randomNumber3})`;
         });
         square.addEventListener("mouseleave", (e)=>{
             e.target.style.backgroundColor = "#25283D";
